@@ -1,0 +1,34 @@
+Language:                                       Cpp
+BasedOnStyle:                                   LLVM
+IndentWidth:                                    2
+TabWidth:                                       2
+ContinuationIndentWidth:                        2
+ConstructorInitializerIndentWidth:              2
+UseTab:                                         Never
+Standard:                                       Latest
+AlignAfterOpenBracket:                          DontAlign
+AlignEscapedNewlines:                           Right
+AlignTrailingComments:                          true
+AllowShortCaseLabelsOnASingleLine:              true
+AllowShortFunctionsOnASingleLine:               InlineOnly
+BreakBeforeBraces:                              Allman
+BreakConstructorInitializersBeforeComma:        true
+ColumnLimit:                                    0
+PointerAlignment:                               Left
+SpacesInAngles:                                 false
+LambdaBodyIndentation:                          OuterScope
+NamespaceIndentation:                           All
+IncludeBlocks: Regroup
+IncludeCategories:
+  # System Libs
+  - Regex:           '^<.*>'
+    Priority: 1
+    SortPriority: 5
+  # Vendor Includes
+  - Regex:           '^((<|")(SFML|nlohmann|magic_enum|imgui|imgui-sfml|imgui-ocornut)/)'
+    Priority: 2
+    SortPriority: 1
+  # Core Includes
+  - Regex:           '".*"' 
+    Priority: 4
+    SortPriority: 2
