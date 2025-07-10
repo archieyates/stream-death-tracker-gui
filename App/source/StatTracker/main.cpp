@@ -1,12 +1,27 @@
-#define _CRTDBG_MAP_ALLOC
+#include "SFML/Graphics/RenderWindow.hpp"
+#include "imgui-sfml/imgui-SFML.h"
+#include "imgui/imgui.h"
 
+#include "Game.h"
+#include "Manager/WindowManager.h"
+
+#include <cassert>
 #include <iostream>
 
 int main()
 {
-  _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+  game::init();
 
-  std::cout << "Hello World" << std::endl;
+  WindowManager* windowManager = game::getWindowManager();
+
+  while (windowManager->isOpen())
+  {
+    game::update();
+    game::render();
+  }
+  windowManager = nullptr;
+
+  game::shutdown();
 
   return 0;
 }
