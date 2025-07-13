@@ -22,8 +22,6 @@ bool IndexString::isValid() const
 void IndexString::set(const std::string& string)
 {
   m_string = string;
-  std::transform(m_string.begin(), m_string.end(), m_string.begin(), std::tolower);
-
   m_hash = std::hash<std::string>{}(m_string);
 }
 

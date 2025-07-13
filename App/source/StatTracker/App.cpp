@@ -16,7 +16,7 @@
   delete manager;                 \
   manager = nullptr;
 
-class Game
+class App
 {
 public:
   void init()
@@ -71,59 +71,59 @@ public:
   WindowManager* m_windowManager{nullptr};
 };
 
-static Game* s_game = nullptr;
+static App* s_app = nullptr;
 
 namespace app
 {
   void init()
   {
-    assert(s_game == nullptr);
+    assert(s_app == nullptr);
 
-    s_game = new Game();
-    s_game->init();
-    s_game->postInit();
+    s_app = new App();
+    s_app->init();
+    s_app->postInit();
   }
 
   void update()
   {
-    assert(s_game != nullptr);
+    assert(s_app != nullptr);
 
-    s_game->update();
+    s_app->update();
   }
 
   void render()
   {
-    assert(s_game != nullptr);
+    assert(s_app != nullptr);
 
-    s_game->preRender();
-    s_game->render();
-    s_game->draw();
+    s_app->preRender();
+    s_app->render();
+    s_app->draw();
   }
 
   void shutdown()
   {
-    assert(s_game != nullptr);
+    assert(s_app != nullptr);
 
-    s_game->shutdown();
-    delete s_game;
-    s_game = nullptr;
+    s_app->shutdown();
+    delete s_app;
+    s_app = nullptr;
   }
 
   TickManager* getTickManager()
   {
-    assert(s_game != nullptr);
-    return s_game->m_tickManager;
+    assert(s_app != nullptr);
+    return s_app->m_tickManager;
   }
 
   WindowManager* getWindowManager()
   {
-    assert(s_game != nullptr);
-    return s_game->m_windowManager;
+    assert(s_app != nullptr);
+    return s_app->m_windowManager;
   }
 
   ImGuiManager* getImGuiManager()
   {
-    assert(s_game != nullptr);
-    return s_game->m_imguiManager;
+    assert(s_app != nullptr);
+    return s_app->m_imguiManager;
   }
 } // namespace app
