@@ -3,7 +3,7 @@
 #include "imgui/imgui.h"
 
 #include "App.h"
-#include "Deaths/Game.h"
+#include "Deaths/DeathCounter.h"
 #include "Manager/WindowManager.h"
 
 #include <cassert>
