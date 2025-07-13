@@ -160,4 +160,43 @@ namespace json
     }
     return ParseResult::Result_Unset;
   }
+
+  ParseResult parseUShort(const nlohmann::json& jsonData, const std::string& field, unsigned short& uShortOut)
+  {
+    nlohmann::json fieldData = parseField(jsonData, field);
+
+    if (!fieldData.is_null())
+    {
+      if (fieldData.is_number())
+      {
+        uShortOut = fieldData.get<unsigned short>();
+        return ParseResult::Result_OK;
+      }
+      else
+      {
+        return ParseResult::Result_Invalid;
+      }
+    }
+    return ParseResult::Result_Unset;
+  }
+
+  ParseResult parseUShort(const nlohmann::json& jsonData, int index, unsigned short& uShortOut)
+  {
+    nlohmann::json fieldData = jsonData.at(index);
+
+    if (!fieldData.is_null())
+    {
+      if (fieldData.is_number())
+      {
+        uShortOut = fieldData.get<unsigned short>();
+        return ParseResult::Result_OK;
+      }
+      else
+      {
+        return ParseResult::Result_Invalid;
+      }
+    }
+    return ParseResult::Result_Unset;
+  }
+
 } // namespace json

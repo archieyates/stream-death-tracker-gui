@@ -6,7 +6,7 @@ class TickManager;
 class WindowManager;
 class ImGuiManager;
 
-namespace game
+namespace app
 {
   extern void init();
   extern void update();
@@ -16,4 +16,4 @@ namespace game
   extern TickManager* getTickManager();
   extern WindowManager* getWindowManager();
   extern ImGuiManager* getImGuiManager();
-} // namespace game
+} // namespace app

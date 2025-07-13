@@ -1,6 +1,6 @@
 #include "Paths.h"
 
-namespace game
+namespace app
 {
   std::string getContentDir()
   {
@@ -11,4 +11,4 @@ namespace game
   {
     return "resources";
   }
-} // namespace game
+} // namespace app

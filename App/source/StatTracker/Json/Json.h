@@ -31,6 +31,9 @@ namespace json
   extern ParseResult parseUChar(const nlohmann::json& jsonData, const std::string& field, unsigned char& uCharOut);
   extern ParseResult parseUChar(const nlohmann::json& jsonData, int index, unsigned char& uCharOut);
 
+  extern ParseResult parseUShort(const nlohmann::json& jsonData, const std::string& field, unsigned short& uShortOut);
+  extern ParseResult parseUShort(const nlohmann::json& jsonData, int index, unsigned short& uShortOut);
+
   template <typename T>
   extern ParseResult parseEnum(const nlohmann::json& jsonData, const std::string& field, T& enumOut);
   template <typename T>

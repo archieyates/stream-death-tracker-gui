@@ -2,7 +2,7 @@
 
 #include "SFML/Graphics/RenderWindow.hpp"
 
-#include "Game.h"
+#include "App.h"
 #include "Utils/magic_enum.h"
 
 void WindowManager::draw()

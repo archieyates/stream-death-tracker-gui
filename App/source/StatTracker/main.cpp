@@ -2,7 +2,8 @@
 #include "imgui-sfml/imgui-SFML.h"
 #include "imgui/imgui.h"
 
-#include "Game.h"
+#include "App.h"
+#include "Deaths/Game.h"
 #include "Manager/WindowManager.h"
 
 #include <cassert>
@@ -10,18 +11,18 @@
 
 int main()
 {
-  game::init();
+  app::init();
 
-  WindowManager* windowManager = game::getWindowManager();
+  WindowManager* windowManager = app::getWindowManager();
 
   while (windowManager->isOpen())
   {
-    game::update();
-    game::render();
+    app::update();
+    app::render();
   }
   windowManager = nullptr;
 
-  game::shutdown();
+  app::shutdown();
 
   return 0;
 }

@@ -4,8 +4,8 @@
 
 #include <string>
 
-namespace game
+namespace app
 {
   extern std::string getContentDir();
   extern std::string getResourcesDir();
-} // namespace game
+} // namespace app

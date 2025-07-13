@@ -1,4 +1,4 @@
-#include "Game.h"
+#include "App.h"
 
 #include "Editor/ImGuiManager.h"
 #include "Manager/TickManager.h"
@@ -73,7 +73,7 @@ public:
 
 static Game* s_game = nullptr;
 
-namespace game
+namespace app
 {
   void init()
   {
@@ -126,4 +126,4 @@ namespace game
     assert(s_game != nullptr);
     return s_game->m_imguiManager;
   }
-} // namespace game
+} // namespace app
